@@ -1,6 +1,7 @@
 package com.yakov.weber.cleanapp.toothpick.module
 
 import android.content.Context
+import com.yakov.weber.cleanapp.model.system.message.SystemMessageNotifier
 import com.yakov.weber.cleanapp.toothpick.system.ResManager
 import ru.terrakok.cicerone.Cicerone
 import ru.terrakok.cicerone.NavigatorHolder
@@ -19,6 +20,7 @@ class AppModule (context:Context) : Module() {
         Timber.e("Common Inject")
         bind(Context::class.java).toInstance(context)
         bind(ResManager::class.java).singletonInScope()
+        bind(SystemMessageNotifier::class.java).toInstance(SystemMessageNotifier())
 
         Timber.e("Navigation Inject")
         val cicerone = Cicerone.create()

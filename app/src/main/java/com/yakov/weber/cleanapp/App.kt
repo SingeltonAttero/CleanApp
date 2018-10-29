@@ -38,8 +38,8 @@ class App : Application() {
             Toothpick.setConfiguration(Configuration.forDevelopment().preventMultipleRootScopes())
         } else {
             Toothpick.setConfiguration(Configuration.forProduction().disableReflection())
-          /*  FactoryRegistryLocator.setRootRegistry(com.yakov.weber.cleanapp.FactoryRegistry())
-            MemberInjectorRegistryLocator.setRootRegistry(com.yakov.weber.cleanapp.MemberInjectorRegistry())*/
+            FactoryRegistryLocator.setRootRegistry(com.yakov.weber.cleanapp.FactoryRegistry())
+            MemberInjectorRegistryLocator.setRootRegistry(com.yakov.weber.cleanapp.MemberInjectorRegistry())
         }
     }
 

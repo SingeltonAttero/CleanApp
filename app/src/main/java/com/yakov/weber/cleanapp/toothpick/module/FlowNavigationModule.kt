@@ -1,7 +1,7 @@
 package com.yakov.weber.cleanapp.toothpick.module
 
+import com.yakov.weber.cleanapp.model.system.flow.FlowRouter
 import com.yakov.weber.cleanapp.toothpick.qualifier.InnerNavigation
-import com.yakov.weber.cleanapp.toothpick.system.flow.FlowRouter
 import ru.terrakok.cicerone.Cicerone
 import ru.terrakok.cicerone.NavigatorHolder
 import ru.terrakok.cicerone.Router
