@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/reading_room"
+        android:title="@string/reading_room"
+        android:icon="@drawable/ic_apps_navigation"/>
+
+    <item
+        android:id="@+id/dictionary"
+        android:title="@string/dictionary"
+        android:icon="@drawable/ic_apps_navigation"/>
+
+    <item android:title="@string/story"
+        android:icon="@drawable/ic_apps_navigation"/>
+
+</menu>
