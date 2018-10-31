@@ -2,16 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/reading_room"
+        android:id="@+id/menu_reading_room"
         android:title="@string/reading_room"
         android:icon="@drawable/ic_apps_navigation"/>
 
     <item
-        android:id="@+id/dictionary"
+        android:id="@+id/menu_dictionary"
         android:title="@string/dictionary"
-        android:icon="@drawable/ic_apps_navigation"/>
+        android:icon="@drawable/ic_beach_access_navigation"/>
 
-    <item android:title="@string/story"
-        android:icon="@drawable/ic_apps_navigation"/>
+    <item
+        android:id="@+id/menu_story"
+        android:title="@string/story"
+        android:icon="@drawable/ic_directions_bike_navigation"/>
 
 </menu>

@@ -9,5 +9,5 @@ import javax.inject.Inject
  * @author YWeber
  * project CleanApp */
 @InjectViewState
-class MainPresenter @Inject constructor() : BasePresenter<MainView>() {
+class MainFlowPresenter @Inject constructor() : BasePresenter<MainFlowView>() {
 }

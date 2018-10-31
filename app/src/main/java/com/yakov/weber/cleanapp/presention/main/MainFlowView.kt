@@ -7,6 +7,6 @@ import com.arellomobile.mvp.MvpView
  * @author YWeber
  * project CleanApp */
 
-interface MainView : MvpView {
+interface MainFlowView : MvpView {
 
 }
