@@ -48,17 +48,17 @@ class MainFlowFragment : BaseFragment(), MainFlowView {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
                     when(it.itemId){
-                        R.id.menu_reading_room -> selectFragment(Screens.ReadingRoom(getString(R.string.reading_room)).fragment)
-                        R.id.menu_dictionary -> selectFragment(Screens.ReadingRoom(getString(R.string.dictionary)).fragment)
-                        else -> selectFragment(Screens.ReadingRoom(getString(R.string.story)).fragment)
+                        R.id.menu_reading_room -> selectFragment(Screens.ReadingRoom.fragment)
+                        R.id.menu_dictionary -> {}
+                        else -> {}
                     }
                 }.bind()
 
     }
 
-    fun selectFragment(fragment:Fragment){
+    private fun selectFragment(fragment:Fragment){
         childFragmentManager.beginTransaction().apply {
-            add(R.id.fragment_main_container,fragment)
+            replace(R.id.fragment_main_container,fragment)
         }.commit()
     }
 

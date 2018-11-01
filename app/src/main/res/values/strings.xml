@@ -3,4 +3,5 @@
     <string name="reading_room">Читальня</string>
     <string name="dictionary">Словарь</string>
     <string name="story">История</string>
+    <string name="stub" />
 </resources>

@@ -8,9 +8,9 @@ import ru.terrakok.cicerone.android.support.SupportAppScreen
 object Screens {
 
 
-    data class ReadingRoom(val title: String) : SupportAppScreen(){
+    object ReadingRoom : SupportAppScreen(){
         override fun getFragment(): Fragment {
-            return ReadingRoomFragment.newInstance(title)
+            return ReadingRoomFragment.newInstance()
         }
     }
 
