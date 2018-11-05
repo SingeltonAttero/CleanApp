@@ -49,7 +49,7 @@ class MainFlowFragment : BaseFragment(), MainFlowView {
                 .subscribe {
                     when(it.itemId){
                         R.id.menu_reading_room -> selectFragment(Screens.ReadingRoom.fragment)
-                        R.id.menu_dictionary -> {}
+                        R.id.menu_dictionary -> selectFragment(Screens.DictionaryList.fragment)
                         else -> {}
                     }
                 }.bind()

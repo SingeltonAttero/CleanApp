@@ -14,6 +14,8 @@ import com.yakov.weber.cleanapp.presention.global.DisposableComponentImpl
  * @author YWeber
  * project CleanApp */
 
+private const val PROGRESS_TAG = "bf_progress"
+
 abstract class BaseFragment : MvpAppCompatFragment(), DisposableComponent by DisposableComponentImpl() {
 
     abstract val layout: Int
@@ -27,6 +29,19 @@ abstract class BaseFragment : MvpAppCompatFragment(), DisposableComponent by Dis
         clear()
         super.onDestroy()
     }
+    protected fun showProgressDialog(progress: Boolean) {
+        if (!isAdded) return
+        val fragment = childFragmentManager.findFragmentByTag(PROGRESS_TAG)
+        if (fragment != null && !progress) {
+            (fragment as ProgressDialog).dismissAllowingStateLoss()
+            childFragmentManager.executePendingTransactions()
+        } else if (fragment == null && progress) {
+            ProgressDialog().show(childFragmentManager, PROGRESS_TAG)
+            childFragmentManager.executePendingTransactions()
+        }
+    }
+
+
 
     open fun onBackPressed(){}
 
