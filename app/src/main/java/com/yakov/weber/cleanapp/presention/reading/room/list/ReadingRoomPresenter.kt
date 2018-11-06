@@ -1,8 +1,10 @@
-package com.yakov.weber.cleanapp.presention.reading.room
+package com.yakov.weber.cleanapp.presention.reading.room.list
 
 import com.arellomobile.mvp.InjectViewState
+import com.yakov.weber.cleanapp.Screens
 import com.yakov.weber.cleanapp.entity.Book
 import com.yakov.weber.cleanapp.presention.global.BasePresenter
+import ru.terrakok.cicerone.Router
 import javax.inject.Inject
 
 /**
@@ -10,7 +12,7 @@ import javax.inject.Inject
  * @author YWeber
  * project CleanApp */
 @InjectViewState
-class ReadingRoomPresenter @Inject constructor() : BasePresenter<ReadingRoomView>() {
+class ReadingRoomPresenter @Inject constructor(private val router: Router) : BasePresenter<ReadingRoomView>() {
 
     companion object {
         val listMockBook = listOf(
@@ -27,6 +29,10 @@ class ReadingRoomPresenter @Inject constructor() : BasePresenter<ReadingRoomView
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
         viewState.setBookList(listMockBook)
+    }
+
+    fun nextToScreen(book: Book){
+        router.replaceScreen(Screens.DetailedRoomFlow)
     }
 
 }

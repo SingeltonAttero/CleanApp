@@ -1,4 +1,4 @@
-package com.yakov.weber.cleanapp.ui.reading.room
+package com.yakov.weber.cleanapp.ui.reading.room.list
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.item_reading_book.view.*
  * @author YWeber
  * project CleanApp */
 
-class ReadBookAdapter(private val bookList: List<Book>) : RecyclerView.Adapter<ReadBookAdapter.ReadBookHolder>() {
+class ReadBookAdapter(private val bookList: List<Book>,private val clickItem:(Book) -> Unit) : RecyclerView.Adapter<ReadBookAdapter.ReadBookHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReadBookHolder {
         val view = parent.inflate(R.layout.item_reading_book)
         return ReadBookHolder(view)
@@ -28,6 +28,7 @@ class ReadBookAdapter(private val bookList: List<Book>) : RecyclerView.Adapter<R
 
     inner class ReadBookHolder(itemView:View) : RecyclerView.ViewHolder(itemView){
         fun bind(book:Book){
+            itemView.setOnClickListener { clickItem(book) }
             itemView.title_reading_book.text = book.title
             itemView.description_reading_book.text = book.description
             Glide.with(itemView.context)

@@ -18,6 +18,8 @@ import org.jetbrains.anko.toast
 import ru.terrakok.cicerone.Navigator
 import ru.terrakok.cicerone.NavigatorHolder
 import ru.terrakok.cicerone.android.support.SupportAppNavigator
+import ru.terrakok.cicerone.commands.Back
+import ru.terrakok.cicerone.commands.BackTo
 import ru.terrakok.cicerone.commands.Command
 import toothpick.Toothpick
 import javax.inject.Inject
@@ -44,6 +46,8 @@ class AppActivity : MvpAppCompatActivity(), AppView {
 
     private val navigator:Navigator by lazy {
         object : SupportAppNavigator(this,supportFragmentManager,R.id.app_container){
+
+
             override fun setupFragmentTransaction(command: Command?,
                                                   currentFragment: Fragment?,
                                                   nextFragment: Fragment?,

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.yakov.weber.cleanapp.presention.global.DisposableComponent
 import com.yakov.weber.cleanapp.presention.global.DisposableComponentImpl
+import org.jetbrains.anko.support.v4.toast
 
 /**
  * Created on 29.10.18

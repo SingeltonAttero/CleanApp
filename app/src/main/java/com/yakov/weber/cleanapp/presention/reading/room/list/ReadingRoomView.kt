@@ -1,4 +1,4 @@
-package com.yakov.weber.cleanapp.presention.reading.room
+package com.yakov.weber.cleanapp.presention.reading.room.list
 
 import com.arellomobile.mvp.MvpView
 import com.yakov.weber.cleanapp.entity.Book

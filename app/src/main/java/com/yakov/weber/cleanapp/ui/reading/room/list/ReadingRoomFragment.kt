@@ -1,19 +1,17 @@
-package com.yakov.weber.cleanapp.ui.reading.room
+package com.yakov.weber.cleanapp.ui.reading.room.list
 
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.view.View
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.yakov.weber.cleanapp.R
 import com.yakov.weber.cleanapp.entity.Book
-import com.yakov.weber.cleanapp.presention.reading.room.ReadingRoomPresenter
-import com.yakov.weber.cleanapp.presention.reading.room.ReadingRoomView
+import com.yakov.weber.cleanapp.presention.reading.room.list.ReadingRoomPresenter
+import com.yakov.weber.cleanapp.presention.reading.room.list.ReadingRoomView
 import com.yakov.weber.cleanapp.toothpick.DI
 import com.yakov.weber.cleanapp.ui.global.BaseFragment
 import kotlinx.android.synthetic.main.fragment_reading_room.*
 import kotlinx.android.synthetic.main.toolbar.*
-import org.jetbrains.anko.support.v4.toast
 import toothpick.Toothpick
 
 /**
@@ -45,7 +43,7 @@ class ReadingRoomFragment : BaseFragment(), ReadingRoomView {
     }
 
     override fun setBookList(bookList: List<Book>) {
-        recycler_book.adapter = ReadBookAdapter(bookList)
+        recycler_book.adapter = ReadBookAdapter(bookList) { book -> presenter.nextToScreen(book) }
         recycler_book.layoutManager = LinearLayoutManager(activity)
     }
 }
